@@ -1,0 +1,12 @@
+ChangeLog
+ObjScanner.pm
+MANIFEST
+README
+Makefile.PL
+demo/objscan.pl
+t/basic.t
+t/rudi.t
+t/options.t
+t/pseudo_hash.t
+t/scanner.t
+META.yml                                 Module meta-data (added by MakeMaker)
