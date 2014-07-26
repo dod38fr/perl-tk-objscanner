@@ -3,7 +3,7 @@
 2.012 2007-10-09
 
 	* ObjScanner.pm: Added require 5.006
-	* Makefile.PL: Added require 5.006 to avoid automatic test 
+	* Makefile.PL: Added require 5.006 to avoid automatic test
 	  failures from tester.cpan.org
 
 2.011 2007-09-20
@@ -30,29 +30,35 @@
 	https://rt.cpan.org/Ticket/Display.html?id=6831)
 
 
-	* t/basic.t (new): works with Tk804.025 
+	* t/basic.t (new): works with Tk804.025
 
 
-	* ObjScanner.pm v2.6: all configuration options can be called with
+2.006 2003-11-19
+
+	* ObjScanner.pm: all configuration options can be called with
 	a hyphen (i.e '-title' instead of 'title')
 	(scan_object): call pack with hyphenated option (otherwise it
 	breaks on Solaris with Tk800.025)
 
+2.005 2003-11-14
 
-	* ObjScanner.pm: v2.5: replaced obsolete WeakRef module by
+	* ObjScanner.pm: replaced obsolete WeakRef module by
 	Scalar::Util
-	Note that pseudo-hashes are deprecated. 
+	Note that pseudo-hashes are deprecated.
 
+2.004 2003-03-21
 
-	* ObjScanner.pm v 2.4 (analyse_element): 
+	* ObjScanner.pm (analyse_element):
 	- recognize weak references
 
+2.003 2003-02-28
 
-	* ObjScanner.pm (scan_object): 
+	* ObjScanner.pm (scan_object):
 	- added autonomous scan popup widget
 
+2.001 2003-01-31
 
-	* ObjScanner.pm v2.1 : 
+	* ObjScanner.pm:
 	External changes:
  	- added view_pseudo parameter
 	- can view intern of tied scalar, hash or array by using middle-button
@@ -79,7 +85,7 @@
 
 1.019 2000-06-07
 
-	* ObjScanner.pm: 
+	* ObjScanner.pm:
 
 	1: Use Adjuster so that the user can adjust the relative heights
 	of the HList window and the dump window.
@@ -91,7 +97,7 @@
 
 1.018 2000-04-17
 
-	* ObjScanner.pm: 
+	* ObjScanner.pm:
 	- fixed a bug related to root display
 	- added a patch provided by Rudi Farkas to display a watch cursor
 	  when displaying a sub-object
@@ -104,7 +110,7 @@
 
 1.016 1999-05-31
 
-	* ObjScanner.pm: 
+	* ObjScanner.pm:
 	- Better support of complex (perl wise) objects
 	- added 'destroyable' parameters
 	- updated 'CAVEATS' doc
@@ -116,7 +122,7 @@
 
 1.013 1999-04-21
 
-	* ObjScanner.pm : Complete re-write. It now uses HList instead of 
+	* ObjScanner.pm : Complete re-write. It now uses HList instead of
 	data dumper.
 
 1.11 1999-01-20
@@ -147,7 +153,7 @@
         compile the 3 subs (Tom C. mentioned that perl can compile ~10000
 	lines/sec).
 
-	o use Data::Dumper only when needed:  
+	o use Data::Dumper only when needed:
 	startup gain with replace of 'use Data::Dumper'
 	and use 'require Data::Dumper in sub listScan.
 
