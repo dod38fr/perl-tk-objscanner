@@ -1,12 +1,10 @@
-# 	$Id: ObjScanner.pm,v 2.12 2007-10-09 11:21:08 domi Exp $	
-
 package Tk::ObjScanner;
 
 require 5.006;
 
 use strict;
 use warnings ;
-use Scalar::Util qw(weaken isweak);
+use Scalar::Util 1.01 qw(weaken isweak);
 
 # Version 1.1805 - patches proposed by Rudi Farkas rudif@lecroy.com
 # 1: Use Adjuster so that the user can adjust the relative heights of the 
@@ -65,8 +63,6 @@ use Data::Dumper;
 
 our @ISA = qw(Tk::Derived Tk::Frame);
 *isa = \&UNIVERSAL::isa;
-
-our $VERSION = sprintf "%d.%03d", q$Revision: 2.12 $ =~ /(\d+)\.(\d+)/;
 
 Tk::Widget->Construct('ObjScanner');
 
@@ -629,7 +625,7 @@ __END__
 
 =head1 NAME
 
-Tk::ObjScanner - Tk data scanner
+Tk::ObjScanner - 'A scanner to view an object\'s attribute
 
 =head1 SYNOPSIS
 
@@ -812,7 +808,7 @@ The idea to use B::Deparse to view code ref.
 
 =head1 AUTHOR
 
-Dominique Dumont, dominique.dumont@hp.com
+Dominique Dumont, ddumont@cpan.org
 
 Copyright (c) 1997-2004,2007 Dominique Dumont. All rights reserved.
 This program is free software; you can redistribute it and/or
