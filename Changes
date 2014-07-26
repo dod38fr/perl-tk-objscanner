@@ -1,60 +1,56 @@
-2007-10-09  Dominique Dumont  <dominique.dumont at hp.com> v2.012
+{{$NEXT}}
+
+2.012 2007-10-09
 
 	* ObjScanner.pm: Added require 5.006
 	* Makefile.PL: Added require 5.006 to avoid automatic test 
 	  failures from tester.cpan.org
 
-2007-09-20  Dominique Dumont  <dominique.dumont at hp.com> v2.011
+2.011 2007-09-20
 
 	* ObjScanner.pm (Populate): pseudo hashes are disabled for perl >=
 	5.009
 
-2004-07-30  domi  <domi at komarr.grenoble.hp.com> v2.010
+2.010 2004-07-30
 
 	* ObjScanner.pm:
 	Showing tied info can be disabled by option or menu (exclusive or)
 	Removed unnecessary 'ROOT:' word from top level label
 
-2004-07-28  domi  <domi at komarr.grenoble.hp.com> v2.009
+2.009 2004-07-28
 
 	* ObjScanner.pm v2.8: Applied patch from MAREKR at cpan.org (See
 	https://rt.cpan.org/Ticket/Display.html?id=5197) to better handle
 	pseudo hashes (even though pseudo hashes are still obsolete)
 
-2004-07-27  domi  <domi at komarr.grenoble.hp.com> v2.008
+2.008 2004-07-27
 
 	* ObjScanner.pm : Applied Slaven Rezic's patch which fixes
 	image associated to array elements. (See
 	https://rt.cpan.org/Ticket/Display.html?id=6831)
 
-2003-11-28  Dominique Dumont  <domi at komarr.grenoble.hp.com>
 
 	* t/basic.t (new): works with Tk804.025 
 
-2003-11-19  Dominique Dumont  <domi at komarr.grenoble.hp.com>
 
 	* ObjScanner.pm v2.6: all configuration options can be called with
 	a hyphen (i.e '-title' instead of 'title')
 	(scan_object): call pack with hyphenated option (otherwise it
 	breaks on Solaris with Tk800.025)
 
-2003-11-14  Dominique Dumont  <domi at komarr.grenoble.hp.com>
 
 	* ObjScanner.pm: v2.5: replaced obsolete WeakRef module by
 	Scalar::Util
 	Note that pseudo-hashes are deprecated. 
 
-2003-03-21  Dominique Dumont  <domi at komarr.grenoble.hp.com>
 
 	* ObjScanner.pm v 2.4 (analyse_element): 
 	- recognize weak references
 
-2003-02-28  Dominique Dumont v2.3  <domi at komarr.grenoble.hp.com>
 
 	* ObjScanner.pm (scan_object): 
 	- added autonomous scan popup widget
 
-2003-01-31  Dominique Dumont  <domi at komarr.grenoble.hp.com>
 
 	* ObjScanner.pm v2.1 : 
 	External changes:
@@ -69,19 +65,19 @@
 	  ObjScanner
 	- internal methods are re-organized for easier sub-classing
 
-2001-01-17  Dominique Dumont  <domi at komarr.grenoble.hp.com> v1.022
+1.022 2001-01-17
 
 	* ObjScanner.pm (isPseudoHash): small bug fix
 	* Makefile.PL: added Tk in PREREQ_PM
 
-2001-01-12  Dominique Dumont  <domi at komarr.grenoble.hp.com> v1.021
+1.021 2001-01-12
 
 	* Makefile.PL: fixed Makefile.PL
 
 	* ObjScanner.pm:
 	- added pseudo hash viewer
 
-2000-06-07  Dominique Dumont  <domi at ISPSERV.grenoble.hp.com> v1.019
+1.019 2000-06-07
 
 	* ObjScanner.pm: 
 
@@ -93,56 +89,56 @@
 	5: add 'open folder' image and display it when item has displayed
 	   children
 
-2000-04-17  Dominique Dumont  <domi at ispserv.grenoble.hp.com> v1.018
+1.018 2000-04-17
 
 	* ObjScanner.pm: 
 	- fixed a bug related to root display
 	- added a patch provided by Rudi Farkas to display a watch cursor
 	  when displaying a sub-object
 
-1999-07-06  Dominique Dumont  <domi at barrayar.grenoble.hp.com> v1.017
+1.017 1999-07-06
 
 	* ObjScanner.pm (element): bug fix on string display
 	* Thanks to Rudi Farkas for contributing test cases with
 	Math::BigInt and Filehandle
 
-1999-05-31  Dominique Dumont  <domi at barrayar.grenoble.hp.com> v1.016
+1.016 1999-05-31
 
 	* ObjScanner.pm: 
 	- Better support of complex (perl wise) objects
 	- added 'destroyable' parameters
 	- updated 'CAVEATS' doc
 
-1999-04-29  Dominique Dumont  <domi at barrayar.grenoble.hp.com> v1.014
+1.014 1999-04-29
 
 	* ObjScanner.pm (element): Support REF and SCALAR, and does not
  	choke on GLOB ,CODE.
 
-1999-04-21  Dominique Dumont  <domi at barrayar.grenoble.hp.com> v1.013
+1.013 1999-04-21
 
 	* ObjScanner.pm : Complete re-write. It now uses HList instead of 
 	data dumper.
 
-1999-01-20  Dominique Dumont  <domi at barrayar.grenoble.hp.com> v1.11
+1.11 1999-01-20
 
 	* ObjScanner.pm: removed dependance on Tk::Multi, better doc,
           don't wrap lines in Text widget.
 
-v0.5: 1998-08-18  Dominique Dumont  <domi at barrayar.grenoble.hp.com>
+0.5 1998-08-18
 
 	* ObjScanner.pm: simplified and adapted for new Multi::Text
 
-1998-06-25  Dominique Dumont  <domi at barrayar.grenoble.hp.com>
+0.4 1998-06-25
 
-	* 0.4 cleanup remaining traces in test.pl
+	* cleanup remaining traces in test.pl
 
-Tue Mar 17 15:09:42 1998  Dominique Dumont  <domi at marlis.grenoble.hp.com>
+0.3 1998-03-17
 
-	* 0.3 : Accepts '-stuff' parameters (instead of 'stuff')
+	* Accepts '-stuff' parameters (instead of 'stuff')
 
-Thu Feb 12 18:07:00 1998  Dominique Dumont  <domi at marlis.grenoble.hp.com>
+0.2 1998-02-12
 
-	* 0.2 : Patch made by Achim Bohnet (Thanks)
+	* Patch made by Achim Bohnet (Thanks)
 
 	o removed AutoLoadeer because
 	don't use AutoLoader for 3 little function
@@ -160,16 +156,14 @@ Thu Feb 12 18:07:00 1998  Dominique Dumont  <domi at marlis.grenoble.hp.com>
 	o Makefile.PL: Tk::Multi does not exist. Changed to check for Tk::Multi::Text
 
 
-Fri Feb  6 18:15:06 1998  Dominique Dumont  <domi at marlis.grenoble.hp.com>
+0.1 1998-02-06
 
 	* 0.1 Beta version. Better AutoLoader usage. Fix minor problem
 	to smooth inheriting Tk::ObjScanner
 
-0.02 Mon 1.12.1997
-        - bug fix
-        - better README
-
-0.01  Wed Jul 23 17:02:08 1997
+0 1997-12-01
+    - bug fix
+    - better README
 	- original version; created by h2xs 1.18
 
 
