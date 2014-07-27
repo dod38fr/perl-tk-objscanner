@@ -104,6 +104,10 @@ sub _scan {
     $cw->idletasks;
 }
 
+sub _isa {
+    return isa(@_);
+}
+
 sub Populate {
     my ( $cw, $args ) = @_;
 
@@ -277,7 +281,7 @@ sub isPseudoHash {
     return 0
         unless ( defined $item
         && $cw->{viewpseudohash}
-        && isa( $item, 'ARRAY' )
+        && _isa( $item, 'ARRAY' )
         && scalar @$item
         && ref( $item->[0] ) =~ /^(HASH|pseudohash)$/ );
 
@@ -340,9 +344,9 @@ sub displaySubItem {
 
     # test for tied_display objects
     my $tied_object;
-    if    ( isa( $$ref, 'ARRAY' ) ) { $tied_object = tied @$$ref; }
-    elsif ( isa( $$ref, 'HASH' ) )  { $tied_object = tied %$$ref; }
-    elsif ( isa( $$ref, 'REF' ) )   { $tied_object = tied $$$ref; }
+    if    ( _isa( $$ref, 'ARRAY' ) ) { $tied_object = tied @$$ref; }
+    elsif ( _isa( $$ref, 'HASH' ) )  { $tied_object = tied %$$ref; }
+    elsif ( _isa( $$ref, 'REF' ) )   { $tied_object = tied $$$ref; }
     else                            { $tied_object = tied $$ref; }
 
     my $is_tied = $do_tie && defined $tied_object ? 1 : 0;
@@ -389,7 +393,7 @@ sub displayObject {
     my $h            = $cw->Subwidget('hlist');
     my $isPseudoHash = $cw->isPseudoHash($$ref);
 
-    if ( isa( $$ref, 'ARRAY' ) and not $isPseudoHash ) {
+    if ( _isa( $$ref, 'ARRAY' ) and not $isPseudoHash ) {
         foreach my $i ( 0 .. $#$$ref ) {
 
             #print "adding array item $i: $_,",ref($_),"\n";
@@ -402,7 +406,7 @@ sub displayObject {
                 -text  => $cw->describe_element( $ref, $i ) );
         }
     }
-    elsif ( isa( $$ref, 'REF' ) or isa( $$ref, 'SCALAR' ) ) {
+    elsif ( _isa( $$ref, 'REF' ) or _isa( $$ref, 'SCALAR' ) ) {
         my $npath = $h->addchild(
             $name,
             -data => {
@@ -411,17 +415,17 @@ sub displayObject {
             } );
         $h->itemCreate(
             $npath, 0,
-            -image => isa( $$ref, 'REF' ) ? $cw->{foldImg} : $cw->{itemImg},
+            -image => _isa( $$ref, 'REF' ) ? $cw->{foldImg} : $cw->{itemImg},
             -text => $cw->describe_element($ref) );
     }
-    elsif ( isa( $$ref, 'CODE' ) ) {
+    elsif ( _isa( $$ref, 'CODE' ) ) {
         require B::Deparse;
         my $deparse = B::Deparse->new( "-p", "-sC" );
         my $body = $deparse->coderef2text($$ref);
         $cw->popup_text( "B::Deparse code dump", $body );
     }
-    elsif ( isa( $$ref, 'GLOB' ) ) {
-        if ( isa( $$ref, 'UNIVERSAL' ) ) {
+    elsif ( _isa( $$ref, 'GLOB' ) ) {
+        if ( _isa( $$ref, 'UNIVERSAL' ) ) {
             my ($what) = ( $$ref =~ /\b([A-Z]+)\b/ );
             $cw->popup_text( 'Error', "Sorry, can't display a $what based $$ref object" );
         }
@@ -429,7 +433,7 @@ sub displayObject {
             $cw->popup_text( 'Error', "Sorry, can't display " . $$ref . " reference" );
         }
     }
-    elsif ( isa( $$ref, 'HASH' ) or $isPseudoHash ) {
+    elsif ( _isa( $$ref, 'HASH' ) or $isPseudoHash ) {
 
         # hash or object
         foreach my $k ( sort keys %$$ref ) {
@@ -461,13 +465,13 @@ sub describe_element {
     my ( $cw, $ref, $index ) = @_;
     my $isPseudoHash = $cw->isPseudoHash($$ref);
 
-    if ( isa( $$ref, 'ARRAY' ) and not $isPseudoHash ) {
+    if ( _isa( $$ref, 'ARRAY' ) and not $isPseudoHash ) {
         return "[$index]-> " . $cw->element( \$$ref->[$index] );
     }
-    elsif ( isa( $$ref, 'REF' ) or isa( $$ref, 'SCALAR' ) ) {
+    elsif ( _isa( $$ref, 'REF' ) or _isa( $$ref, 'SCALAR' ) ) {
         return $cw->element($$ref);
     }
-    elsif ( isa( $$ref, 'HASH' ) or $isPseudoHash ) {
+    elsif ( _isa( $$ref, 'HASH' ) or $isPseudoHash ) {
         return ( "{$index}-> " . $cw->element( \$$ref->{$index} ) );
     }
     else {
@@ -507,11 +511,11 @@ sub analyse_element {
     if ( not defined $$ref ) {
         $info{description} = 'undefined';
     }
-    elsif ( $str_ref and isa( $$ref, 'UNIVERSAL' ) ) {
+    elsif ( $str_ref and _isa( $$ref, 'UNIVERSAL' ) ) {
         $info{class} = $str_ref;
         $info{base} =
               $pseudo ? 'PSEUDO-HASH'
-            : isa( $$ref, 'SCALAR' ) ? 'SCALAR'
+            : _isa( $$ref, 'SCALAR' ) ? 'SCALAR'
             : ( $$ref =~ /=([A-Z]+)\(/ ) ? $1
             :                              "some magic with $$ref";    # desperate measure
 
@@ -538,8 +542,8 @@ sub analyse_element {
     if ( defined $$ref ) {
         $info{nb} =
               $pseudo ? $pseudo
-            : isa( $$ref, 'ARRAY' ) ? scalar(@$$ref)
-            : isa( $$ref, 'HASH' )  ? scalar keys(%$$ref)
+            : _isa( $$ref, 'ARRAY' ) ? scalar(@$$ref)
+            : _isa( $$ref, 'HASH' )  ? scalar keys(%$$ref)
             :                         undef;
     }
 
