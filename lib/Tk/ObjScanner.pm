@@ -60,7 +60,7 @@ use Tk::Derived;
 use Tk::Frame;
 use Data::Dumper;
 
-our @ISA = qw(Tk::Derived Tk::Frame);
+use base qw(Tk::Derived Tk::Frame);
 *isa = \&UNIVERSAL::isa;
 
 Tk::Widget->Construct('ObjScanner');
