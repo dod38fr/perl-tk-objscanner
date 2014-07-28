@@ -4,7 +4,7 @@ require 5.006;
 
 use strict;
 use warnings;
-use Scalar::Util 1.01 qw(weaken isweak);
+use Scalar::Util 1.01 qw(weaken isweak reftype);
 
 # Version 1.1805 - patches proposed by Rudi Farkas rudif@lecroy.com
 # 1: Use Adjuster so that the user can adjust the relative heights of the
@@ -61,7 +61,6 @@ use Tk::Frame;
 use Data::Dumper;
 
 use base qw(Tk::Derived Tk::Frame);
-*isa = \&UNIVERSAL::isa;
 
 Tk::Widget->Construct('ObjScanner');
 
@@ -105,7 +104,8 @@ sub _scan {
 }
 
 sub _isa {
-    return isa(@_);
+    #return UNIVERSAL::isa(@_);
+    return (reftype($_[0]) // '') eq $_[1] ;
 }
 
 sub Populate {
