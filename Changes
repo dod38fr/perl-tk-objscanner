@@ -1,5 +1,12 @@
 {{$NEXT}}
 
+2.013 2014-07-28
+
+    * Refreshed the module:
+      * no longer mess with UNIVERSAL::isa
+      * use Test::More
+      * skip test when x server is not available
+
 2.012 2007-10-09
 
 	* ObjScanner.pm: Added require 5.006
