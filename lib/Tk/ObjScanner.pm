@@ -599,7 +599,7 @@ __END__
 
 =head1 NAME
 
-Tk::ObjScanner - 'A scanner to view an object\'s attribute
+Tk::ObjScanner - a GUI to scan any perl data structure or object
 
 =head1 SYNOPSIS
 
