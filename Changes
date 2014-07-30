@@ -1,6 +1,12 @@
 {{$NEXT}}
 
+2.016 2014-07-30
+
+    * Added forgotten $VERSION string
+
 2.015 2014-07-29
+
+    * Fixed Abstract
 
 2.014 2014-07-28
 
