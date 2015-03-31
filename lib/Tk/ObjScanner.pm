@@ -603,29 +603,31 @@ Tk::ObjScanner - a GUI to scan any perl data structure or object
 
 =head1 SYNOPSIS
 
-  # regular use
-  use Tk::ObjScanner;
+    # regular use
+    use Tk::ObjScanner;
 
-  my $scanner = $mw->ObjScanner( -caller => $object, 
-                                 -title=>"windows") -> pack ;
+    my $mw  = MainWindow->new;
 
-  my $mw -> ObjScanner
-  (
-   -caller 	    => $object,
-   -title 	    => 'demo setting the scanner options',
-   -background 	    => 'white',
-   -selectbackground => 'beige',
-   -foldImage 	    => $mw->Photo(-file => Tk->findINC('folder.xpm')),
-   -openImage 	    => $mw->Photo(-file => Tk->findINC('openfolder.xpm')),
-   -itemImage 	    => $mw->Photo(-file => Tk->findINC('textfile.xpm')),
-  )
-  -> pack(-expand => 1, -fill => 'both') ;
+    my $scanner1 = $mw->ObjScanner(
+        -caller => $object,
+        -title=>"windows"
+    )->pack;
 
-  # non-intrusive scan style
+    my $scanner2 = $mw->ObjScanner(
+        -caller             => $object,
+        -title              => 'demo setting the scanner options',
+        -background         => 'white',
+        -selectbackground   => 'beige',
+        -foldImage          => $mw->Photo(-file => Tk->findINC('folder.xpm')),
+        -openImage          => $mw->Photo(-file => Tk->findINC('openfolder.xpm')),
+        -itemImage          => $mw->Photo(-file => Tk->findINC('textfile.xpm')),
+    )->pack( -expand => 1, -fill => 'both' ) ;
 
-  # user code to produce data
-  Tk::ObjScanner::scan_object($mydata) ;
-  # resume user code
+    # non-intrusive scan style
+
+    # user code to produce data
+    Tk::ObjScanner::scan_object($mydata) ;
+    # resume user code
 
 =head1 DESCRIPTION
 
