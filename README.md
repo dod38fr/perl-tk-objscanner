@@ -1,4 +1,5 @@
-Tk::ObjScanner provides a GUI to scan any perl data including the
+#Tk::ObjScanner
+provides a GUI to scan any perl data including the
 attributes of an object.
 
 
@@ -27,73 +28,73 @@ The scanner recognizes:
 - tied hashes arrays or scalars
 - weak reference (See weaken function of Scalar::Util for details)
 
-Pseudo-hashes are deprecated.
+**Pseudo-hashes are deprecated**
 
 This module was tested with perl5.8.2 and Tk 804.025 (beta). But
 should work with older versions of perl (> 5.6.1) or Tk.
 
 See the embedded documentation in the module for more details.
 
-Note that test program (in the 't' directory) can be run interactively
+**Note** that test program (in the 't' directory) can be run interactively
 this way :
 
+```
  perl t/xxx.t 1
+```
 
-Comments and suggestions are always welcome.
-
-Many thanks to Achim Bohnet for all the tests, patches (and reports) he 
-made. Many improvements were made thanks to his efforts.
-
-Thanks to Rudi Farkas for the 'watch' patch.
-
-Thanks to Slavec Rezic for the pseudo-hash prototype.
-
-Legal mumbo jumbo:
-
- Copyright (c) 1997-2004,2007,2014 Dominique Dumont. All rights reserved.
- This program is free software; you can redistribute it and/or
- modify it under the same terms as Perl itself.
-
- - Dominique Dumont
-   ddumont at cpan.org
-
----------------------------------------------------------------------
-INSTALLATION
-
-   	 gunzip -c <dist_file>.tar.gz | tar xvf -
-   	 cd <dist_directory>
-   	 perl Makefile.PL
-   	 make test          
-   	 make install
-
-From github, this module is built with Dist::Zilla.
+###Installation
+```
+gunzip -c <dist_file>.tar.gz | tar xvf -
+cd <dist_directory>
+perl Makefile.PL
+make test          
+make install
+```
+From github, this module is built with **Dist::Zilla**.
 
 You must make sure that the following modules are installed:
+
+```
 Dist::Zilla::Plugin::MetaResources
 Dist::Zilla::Plugin::Prepender
 Dist::Zilla::Plugin::Prereqs
 Dist::Zilla::PluginBundle::Filter
+```
 
 On debian or ubuntu, do:
 
+```
 sudo aptitude install \
      libdist-zilla-plugin-prepender-perl \
      libdist-zilla-plugins-cjm-perl \
      libdist-zilla-perl
-
+```
 
 Then run:
-
+```
 dzil build 
-
+```
 or 
-
+```
 dzil test
 dzil build
+```
 
+---
 
+Comments and suggestions are always welcome.
 
+Many thanks to **Achim Bohnet** for all the tests, patches (and reports) he 
+made. Many improvements were made thanks to his efforts.
 
+Thanks to **Rudi Farkas** for the 'watch' patch.
 
+Thanks to **Slavec Rezic** for the pseudo-hash prototype.
 
+Legal mumbo jumbo:
 
+Copyright &copy; 1997-2004,2007,2014 **Dominique Dumont**. All rights reserved.
+ 
+This program is free software; you can redistribute it and/or modify it under the same terms as Perl itself.
+
+**- Dominique Dumont ( ddumont at cpan.org )**
