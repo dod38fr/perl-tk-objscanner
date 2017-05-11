@@ -1,9 +1,7 @@
 # Tk::ObjScanner
 
-provides a GUI to scan any perl data including the
+Tk::ObjScanner is a Perl/Tk module that provides a GUI to scan any perl data including the
 attributes of an object.
-
-
 
 The scanner is a composite widget made of a HList. This widget acts as
 a scanner to the object (or hash ref) passed with the 'caller'
