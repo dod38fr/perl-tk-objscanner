@@ -94,9 +94,13 @@ Thanks to **Rudi Farkas** for the 'watch' patch.
 
 Thanks to **Slavec Rezic** for the pseudo-hash prototype.
 
-Legal mumbo jumbo:
+Thanks to **heytitle** for the documentation fixes
 
-Copyright &copy; 1997-2004,2007,2014 **Dominique Dumont**. All rights reserved.
+Thanks to **E. Choroba** for the retro compatibility patch
+
+## Legalese
+
+Copyright &copy; 1997-2004,2007,2014,2017 **Dominique Dumont**. All rights reserved.
  
 This program is free software; you can redistribute it and/or modify it under the same terms as Perl itself.
 
