@@ -782,11 +782,22 @@ The idea to use B::Deparse to view code ref.
 
 =back
 
+=head1 CONTRIBUTORS
+
+Many thanks to Achim Bohnet for all the tests, patches (and reports) he 
+made. Many improvements were made thanks to his efforts.
+
+Thanks to Rudi Farkas for the 'watch' patch.
+
+Thanks to Slavec Rezic for the pseudo-hash prototype.
+
+Thanks to heytitle for the documentation fixes
+
 =head1 AUTHOR
 
 Dominique Dumont, ddumont@cpan.org
 
-Copyright (c) 1997-2004,2007 Dominique Dumont. All rights reserved.
+Copyright (c) 1997-2004,2007,2014,2017 Dominique Dumont. All rights reserved.
 This program is free software; you can redistribute it and/or
 modify it under the same terms as Perl itself.
 
