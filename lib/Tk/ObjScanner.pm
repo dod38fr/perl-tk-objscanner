@@ -105,7 +105,7 @@ sub _scan {
 
 sub _isa {
     #return UNIVERSAL::isa(@_);
-    return (reftype($_[0]) // '') eq $_[1] ;
+    return (reftype($_[0]) || '') eq $_[1] ;
 }
 
 sub Populate {
