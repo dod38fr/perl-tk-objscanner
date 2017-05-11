@@ -1,4 +1,5 @@
-#Tk::ObjScanner
+# Tk::ObjScanner
+
 provides a GUI to scan any perl data including the
 attributes of an object.
 
@@ -42,7 +43,7 @@ this way :
  perl t/xxx.t 1
 ```
 
-###Installation
+### Installation
 ```
 gunzip -c <dist_file>.tar.gz | tar xvf -
 cd <dist_directory>
@@ -83,6 +84,8 @@ dzil build
 ---
 
 Comments and suggestions are always welcome.
+
+## Contributors
 
 Many thanks to **Achim Bohnet** for all the tests, patches (and reports) he 
 made. Many improvements were made thanks to his efforts.
