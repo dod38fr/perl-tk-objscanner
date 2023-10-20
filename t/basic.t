@@ -121,7 +121,7 @@ SKIP: {
         exit;
     }
 
-    $mw->geometry('+10+10');
+    $mw->geometry('600x400+10+10');
 
     my $w_menu = $mw->Frame(-relief => 'raised', -borderwidth => 2);
     $w_menu->pack(-fill => 'x');
