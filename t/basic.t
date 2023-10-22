@@ -130,7 +130,7 @@ SKIP: {
         -> pack(-side => 'left' );
     $f->command(-label => 'Quit',  -command => sub{$mw->destroy;} );
 
-    my $dummy = new Toto ($mw);
+    my $dummy = Toto->new ($mw);
 
     ok($dummy, "created dummy object");
 
