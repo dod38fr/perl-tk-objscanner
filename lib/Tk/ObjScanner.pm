@@ -137,6 +137,8 @@ sub Populate {
         : defined $args->{'destroyable'}  ? delete $args->{'destroyable'}
         :                                   1;
 
+    my $destroy_label = delete $args->{'-destroy_label'} // delete $args->{destroy_label} // "destroy";
+
     croak "Missing caller argument in ObjScanner\n"
         unless defined $cw->{chief};
 
@@ -214,9 +216,9 @@ sub Populate {
         -text    => 'OK',
         -command => sub { $popup->withdraw(); } )->pack;
 
-    # add a destroy commend to the menu
+    # add a destroy command to the menu
     $menu->command(
-        -label   => 'destroy',
+        -label   => $destroy_label,
         -command => sub { $cw->destroy; } ) if defined $cw->{menu} && $destroyable;
 
     $cw->ConfigSpecs(
@@ -658,6 +660,10 @@ If set, a menu entry will allow the user to destroy the scanner
 widget. (optional, default 1) . You may want to set this parameter to
 0 if the destroy can be managed by a higher level object. This
 parameter is ignored if show_menu is unset.
+
+=item C<-destroy_label>
+
+Label to be used for C<destroy> menu entry.
 
 =item C<-show_tied>
 
