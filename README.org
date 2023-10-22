@@ -2,8 +2,21 @@
   :PROPERTIES:
   :CUSTOM_ID: tkobjscanner
   :END:
+
+** What is Tk::ObjScanner
+
 Tk::ObjScanner is a Perl/Tk module that provides a GUI to scan any perl
 data including the attributes of an object.
+
+This module also provides =data-viewer=, a standalone script that
+opens a =Tk::ObjScanner= widget on a JSON or YAML file.
+
+For instance, this command =data-viewer /usr/share/nodejs/tar/package.json=
+creates the following widget:
+
+[[file:data-viewer.png]]
+
+** In more details
 
 The scanner is a composite widget made of a HList. This widget acts as a
 scanner to the object (or hash ref) passed with the 'caller' parameter.
@@ -22,15 +35,15 @@ popup text window.
 
 This widget can be used as a regular widget in a Tk application or can
 be used as an autonomous popup widget that will display the content of a
-data structure. The latter is like a call to a graphical Data::Dumper.
+data structure. The latter is like a call to a graphical =Data::Dumper=.
 
-The scanner recognizes: - tied hashes arrays or scalars - weak reference
-(See weaken function of Scalar::Util for details)
+The scanner recognizes:
+- tied hashes arrays or scalars
+- weak reference (See weaken function of =Scalar::Util= for details)
 
-*Pseudo-hashes are deprecated*
-
-This module was tested with perl5.8.2 and Tk 804.025 (beta). But should
-work with older versions of perl (> 5.6.1) or Tk.
+This module was tested with perl5.8.2 and Tk 804.025 (beta). But
+should work with older versions of perl (> 5.6.1) or Tk. On the other
+hand, =data-viewer= requires Perl 5.16.
 
 See the embedded documentation in the module for more details.
 
@@ -99,20 +112,7 @@ he made. Many improvements were made thanks to his efforts.
 
 Thanks to *Rudi Farkas* for the 'watch' patch.
 
-Thanks to *Slavec Rezic* for the pseudo-hash prototype.
-
 Thanks to *heytitle* for the documentation fixes
 
 Thanks to *E. Choroba* for the retro compatibility patch
 
-** Legalese
-   :PROPERTIES:
-   :CUSTOM_ID: legalese
-   :END:
-Copyright © 1997-2004,2007,2014,2017 *Dominique Dumont*. All rights
-reserved.
-
-This program is free software; you can redistribute it and/or modify it
-under the same terms as Perl itself.
-
-*- Dominique Dumont ( ddumont at cpan.org )*
