@@ -108,9 +108,3 @@ JSON object are showed as C<HASH>, which is Perl terminology.
 L<Tk::ObjScanner>
 
 =cut
-
-=cut
-
-
-
-
